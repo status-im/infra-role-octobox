@@ -32,10 +32,9 @@
     mode: 0640
 
 - name: Create containers
-  docker_compose:
+  community.docker.docker_compose_v2:
     project_src: '{{ octobox_service_path }}'
-    state: '{{ compose_state }}'
-    restarted: '{{ compose_restart }}'
-    recreate: '{{ compose_recreate }}'
-    pull: true
+    recreate:    '{{ compose_recreate }}'
+    pull:        '{{ compose_pull }}'
+    state:       '{{ compose_state }}'
   register: octobox_container

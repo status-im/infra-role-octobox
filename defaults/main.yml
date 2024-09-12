@@ -32,7 +32,7 @@ octobox_cache_cont_vol: '{{ octobox_service_path }}/cache'
 octobox_cache_cont_image: 'redis:3.2-alpine'
 # ------------------------------------------------------------------------------
 
-# General container management
-compose_recreate: 'smart'
+# general container management
+compose_recreate: 'auto'
 compose_state: 'present'
-compose_restart: false
+compose_pull: 'always'
