@@ -15,7 +15,7 @@ services:
       SECRET_KEY_BASE:           '{{ octobox_secret_key_base | mandatory }}'
       GITHUB_CLIENT_ID:          '{{ octobox_oauth_client_id | mandatory }}'
       GITHUB_CLIENT_SECRET:      '{{ octobox_oauth_secret | mandatory }}'
-      OCTOBOX_DATABASE_NAME:     '{{ octobox_db_name | mandatory }}'
+      OCTOBOX_DATABASE_NAME:     '{{ octobox_db_name }}'
       OCTOBOX_DATABASE_USERNAME: '{{ octobox_db_user | mandatory }}'
       OCTOBOX_DATABASE_PASSWORD: '{{ octobox_db_pass | mandatory }}'
       OCTOBOX_DATABASE_HOST:     'db'
@@ -40,8 +40,8 @@ services:
     user: root
     environment:
       POSTGRES_DB: '{{ octobox_db_name }}'
-      POSTGRES_USER: '{{ octobox_db_user }}'
-      POSTGRES_PASSWORD: '{{ octobox_db_pass }}'
+      POSTGRES_USER: '{{ octobox_db_user | mandatory }}'
+      POSTGRES_PASSWORD: '{{ octobox_db_pass | mandatory }}'
       # This fixes chmod errors on DB startup due to volume + userns-remap
       PGDATA: '/var/lib/postgresql/data/pgdata'
     tmpfs:

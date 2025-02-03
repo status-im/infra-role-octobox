@@ -24,8 +24,8 @@ octobox_db_cont_image: 'postgres:9.6-alpine'
 octobox_db_cont_uid: 70
 octobox_db_host_uid: '{{ 100000 + octobox_db_cont_uid | int }}'
 octobox_db_name: 'octobox'
-octobox_db_user: '{{lookup("bitwarden", "octobox/db", field="username")}}'
-octobox_db_pass: '{{lookup("bitwarden", "octobox/db", field="password")}}'
+#octobox_db_user: ~
+#octobox_db_pass: ~
 # Cache ------------------------------------------------------------------------
 octobox_cache_cont_name: '{{ octobox_service_name }}-cache'
 octobox_cache_cont_vol: '{{ octobox_service_path }}/cache'
