@@ -14,7 +14,7 @@ octobox_domain: 'gh.status.im'
 # App --------------------------------------------------------------------------
 octobox_app_cont_name: '{{ octobox_service_name }}-app'
 octobox_app_cont_vol: '{{ octobox_service_path }}/app'
-octobox_app_cont_tag: 'june-2026'
+octobox_app_cont_tag: 'august-2026'
 octobox_app_cont_image: 'octoboxio/octobox:{{ octobox_app_cont_tag }}'
 octobox_app_cont_port: 3000
 # Database ---------------------------------------------------------------------
