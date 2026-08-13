@@ -5,7 +5,7 @@
     nginx_configs:
       octobox_rate_limiting:
         # Limit requests to 1 per minute based on IP
-        - limit_req_zone $binary_remote_addr zone=octobox_by_ip:20m rate=20r/m
+        - limit_req_zone $binary_remote_addr zone=octobox_by_ip:30m rate=30r/m
     nginx_sites:
       octobox_http:
         - listen 80
@@ -19,7 +19,7 @@
         - ssl_certificate_key /certs/origin.key
 
         - location / {
-            limit_req zone=octobox_by_ip burst=30 nodelay;
+            limit_req zone=octobox_by_ip burst=40 nodelay;
             proxy_set_header Host $proxy_host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Host $host;
