@@ -14,7 +14,7 @@ octobox_domain: 'gh.status.im'
 # App --------------------------------------------------------------------------
 octobox_app_cont_name: '{{ octobox_service_name }}-app'
 octobox_app_cont_vol: '{{ octobox_service_path }}/app'
-octobox_app_cont_tag: 'august-2026'
+octobox_app_cont_tag: 'july-2026'
 octobox_app_cont_image: 'octoboxio/octobox:{{ octobox_app_cont_tag }}'
 octobox_app_cont_port: 3000
 # Database ---------------------------------------------------------------------
@@ -29,7 +29,7 @@ octobox_db_name: 'octobox'
 # Cache ------------------------------------------------------------------------
 octobox_cache_cont_name: '{{ octobox_service_name }}-cache'
 octobox_cache_cont_vol: '{{ octobox_service_path }}/cache'
-octobox_cache_cont_image: 'redis:3.2-alpine'
+octobox_cache_cont_image: 'redis:8.10.0-alpine'
 # ------------------------------------------------------------------------------
 
 # general container management
